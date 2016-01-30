@@ -14,12 +14,13 @@ from aircraft_class import *
 from flightplan_class import *
 
 #importing the aircraft database
-text = open(os.getcwd()+"\\SIM\\aircraft_database.txt","r")
+simdir = os.path.join(os.getcwd(),"SIM")
+text = open(os.path.join(simdir,"aircraft_database.txt"),"r")
 lines = text.readlines()[1:]
 data = [lines.split() for lines in lines]
 text.close()
 #import waypoint database
-wp_database_text = open(os.getcwd()+"\\SIM\\waypoint_database.txt","r")
+wp_database_text = open(os.path.join(simdir,"waypoint_database.txt"),"r")
 wp_database_lines = wp_database_text.readlines()[1:]
 wp_database = [wp_database_lines.split() for wp_database_lines in wp_database_lines]
 wp_database_text.close()
